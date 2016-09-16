@@ -9,7 +9,7 @@ public class user {
 
     private String password;
 
-    private Integer flag;
+    private String img;
 
     private String eMail;
 
@@ -41,12 +41,12 @@ public class user {
         this.password = password == null ? null : password.trim();
     }
 
-    public Integer getFlag() {
-        return flag;
+    public String getImg() {
+        return img;
     }
 
-    public void setFlag(Integer flag) {
-        this.flag = flag;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String geteMail() {

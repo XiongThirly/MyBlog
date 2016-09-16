@@ -22,7 +22,7 @@ function BtnClick(){
         data:{"name":name, "password":pw}, 
         type:"POST",  
         dataType: 'json',  
-        url:"login",  
+        url:"loginin",  
         
         success:function(data){        	
            if(data["message"] == "1")  {
@@ -44,7 +44,7 @@ function BtnClick(){
 <body>
 
 <div class="login-container">
-	<h1>jQuery带背景切换登录注册表单</h1>
+	<h1>用户登录</h1>
 	
 	<div class="connect">
 		
@@ -60,7 +60,7 @@ function BtnClick(){
 		<button id="submit" type="submit" onclick="BtnClick()">登 陆</button><br>
 	
 
-	<a href="register.jsp">
+	<a href="register.do">
 		<button type="button" class="register-tis">还有没有账号？</button>
 	</a>
 

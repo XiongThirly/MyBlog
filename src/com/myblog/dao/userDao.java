@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.myblog.entities.*;
 @Repository
 public interface userDao {
-	public List<user> getUserList(); 
+	public user getUserinfo(); 
 	 
 	 public List<user> getUserListCount(int start);
 	 

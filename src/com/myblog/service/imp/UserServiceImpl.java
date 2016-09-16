@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
 	@Resource
 	private userDao userDao;
 
-	public List<user> getList() {
-		return userDao.getUserList();
+	public user getuserinfo() {
+		return userDao.getUserinfo();
 	}
 	
 	public int getCount() throws Exception{

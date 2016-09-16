@@ -45,7 +45,7 @@
                     <div class="col-md-12">
                         <div class="thumbnail">
                             <a href="javascript:;">
-                                <img title="关于我 @Ybsat" src="assets/img/about.png" alt="关于我 @Ybsat"
+                                <img title="关于我 @Thirly" src="assets/img/about.png" alt="关于我 @Thirly"
                                 />
                             </a>
                             <div class="caption">
@@ -62,7 +62,7 @@
                             简单概述
                         </h3>
                         <p>
-                            学程序是因为有梦想，希望自己以后能够和小伙伴们创建一家属于自己的互联网公司。对前端(FrontEnd) &amp; 交互体验(User Experience)/后端(Backend)/存储(Storage)/等相关技术十分感兴趣，喜欢变着花样（寻求最优方案）去完成想要完成的事情。可以独立设计并完成网站或软件视觉设计，有轻微代码洁癖。
+                           
                         </p>
                         <p>
                             我的联系方式：
@@ -72,25 +72,25 @@
                                 <li>
                                     电子邮箱:
                                     <kbd>
-                                        junqiahen@gmail.com
+                                       jessonxiong@sina.cn
                                     </kbd>
                                 </li>
                                 <li>
                                     腾讯QQ:
                                     <kbd>
-                                        @724847899
+                                        @1150097958
                                     </kbd>
                                 </li>
                                 <li>
                                     新浪微博:
                                     <kbd>
-                                        weibo.com/5249464563/profile
+                                        http://weibo.com/Thirlyxiong 
                                     </kbd>
                                 </li>
                                 <li>
                                     腾讯微博:
                                     <kbd>
-                                        t.qq.com/qaz0857/kbd>
+                                        
                                 </li>
                                 <li>
                                     我的GIT:
@@ -119,9 +119,9 @@
                             暂未开发暂未开发暂未开发暂未开发暂未开发暂未开发暂未开发。
                         </p>
                         <footer class="pull-right">
-                            二零一五年九月落笔于
-                            <cite title="郑州">
-                                郑州
+                            
+                            <cite title="武汉">
+                                武汉
                             </cite>
                         </footer>
                     </div>
@@ -135,39 +135,7 @@
         <div class="col-md-4">
         </div>
     </div>
-    <footer>
-        <!--版权信息-->
-        <div class="copyright">
-            Copyright Ybsat ©2016 All rights reserved 豫ICP备15027119&nbsp;&nbsp;
-            <a href="www.ybsat.com">
-                Theme leaves by Ybsat
-            </a>
-        </div>
-    </footer>
-</div>
-<script src="assets/js/bootstrap.min.js"></script>
-<script>
-        /*banner 初始化*/
-        $(window).load(function() {
-         $('#slider').nivoSlider({
-            effect: 'random',        // 过渡效果
-            controlNav: false,       // 是否显示图片导航控制按钮（,2,3... ）
-            pauseOnHover: true,      // 鼠标县浮时是否停止动画
-            manualAdvance: false,    // 是否手动切换 
-            animSpeed: 100,          // 图片过渡时间   
-            pauseTime: 2000,         // 图片显示时间
-            pauseOnHover: false,
-            manualAdvance: false,
-        });
-        });
-    $(document).ready(function(){
-        $('body').show();
-        $('.version').text(NProgress.version);
-        NProgress.start();
-        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-    })
-    
-</script>
+     <jsp:include page="head.jsp"/>
 </body>
 
 </html>

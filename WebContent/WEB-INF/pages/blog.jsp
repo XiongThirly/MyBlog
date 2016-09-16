@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="cn" dir="ltr" class="no-js">
@@ -26,6 +27,7 @@
 <body>
 <jsp:include page="UI.jsp"/>
 <div class="container-fluid main-container" id="main-container">
+
     <div class="row">
         <div class="col-md-12 top-title">
             <h2 class="page-title">
@@ -33,16 +35,17 @@
             </h2>
         </div>
     </div>
+      <c:forEach var="context" items="${listStr}" >
     <div class="row">
         <div class="col-md-12 post-container">
             <h2 class="post-title">
-                <a href="content.html" title="">异步测试文章</a>
+                <a href="content?title=${context.title}" title="">${context.title}</a>
             </h2>
             <div class="meta-box">
             <span class="m-post-date">
               <i class="fa fa-calendar-o">
               </i>
-              2015年6月3日
+             ${context.time}
             </span>
             <span class="comments-link">
               <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
@@ -53,12 +56,7 @@
             </span>
             </div>
             <div class="post-content">
-                <p>
-                    leaves由异步制作,欢迎大家使用
-                    <a href="">
-                        这是一个连接
-                    </a>
-                </p>
+               ${context.abstracts }
             </div>
             <div class="meta-box">
             <span class="cat-links">
@@ -68,7 +66,7 @@
                   分类:
               </b>
               <a href="topics/life/diary.htm">
-                  测试
+                  ${context.type }
               </a>
             </span>
             <span class="tag-links">
@@ -84,210 +82,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 post-container">
-            <h2 class="post-title">
-                异步测试文章
-            </h2>
-            <div class="meta-box">
-            <span class="m-post-date">
-              <i class="fa fa-calendar-o">
-              </i>
-              2015年6月3日
-            </span>
-            <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
-                  <i class="fa fa-comments-o">
-                  </i>
-                  留言
-              </a>
-            </span>
-            </div>
-            <div class="post-content">
-                <p>
-                    leaves由异步制作,欢迎大家使用
-                    <a href="">
-                        这是一个连接
-                    </a>
-                </p>
-            </div>
-            <div class="meta-box">
-            <span class="cat-links">
-              <i class="fa fa-navicon">
-              </i>
-              <b>
-                  分类:
-              </b>
-              <a href="">
-                  测试
-              </a>
-            </span>
-            <span class="tag-links">
-              <i class="fa fa-tags">
-              </i>
-              <b>
-                  标签:
-              </b>
-              <a href="" rel="tag">
-                  异步
-              </a>
-            </span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 post-container">
-            <h2 class="post-title">
-                <a href="content.html" title="">异步测试文章</a>
-            </h2>
-            <div class="meta-box">
-            <span class="m-post-date">
-              <i class="fa fa-calendar-o">
-              </i>
-              2015年6月3日
-            </span>
-            <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
-                  <i class="fa fa-comments-o">
-                  </i>
-                  留言
-              </a>
-            </span>
-            </div>
-            <div class="post-content">
-                <p>
-                    leaves由异步制作,欢迎大家使用
-                    <a href="http://www.ybsat.com">
-                        这是一个链接
-                    </a>
-                </p>
-            </div>
-            <div class="meta-box">
-            <span class="cat-links">
-              <i class="fa fa-navicon">
-              </i>
-              <b>
-                  分类:
-              </b>
-              <a href="">
-                  测试
-              </a>
-            </span>
-            <span class="tag-links">
-              <i class="fa fa-tags">
-              </i>
-              <b>
-                  标签:
-              </b>
-              <a href="" rel="tag">
-                  异步
-              </a>
-            </span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 post-container">
-            <h2 class="post-title">
-                <a href="content.html" title="">异步测试文章</a>
-            </h2>
-            <div class="meta-box">
-            <span class="m-post-date">
-              <i class="fa fa-calendar-o">
-              </i>
-              2015年6月3日
-            </span>
-            <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
-                  <i class="fa fa-comments-o">
-                  </i>
-                  留言
-              </a>
-            </span>
-            </div>
-            <div class="post-content">
-                <p>
-                    leaves由异步制作,欢迎大家使用
-                    <a href="http://www.ybsat.com">
-                        这是一个链接
-                    </a>
-                </p>
-            </div>
-            <div class="meta-box">
-            <span class="cat-links">
-              <i class="fa fa-navicon">
-              </i>
-              <b>
-                  分类:
-              </b>
-              <a href="">
-                  测试
-              </a>
-            </span>
-            <span class="tag-links">
-              <i class="fa fa-tags">
-              </i>
-              <b>
-                  标签:
-              </b>
-              <a href="" rel="tag">
-                  异步
-              </a>
-            </span>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 post-container">
-            <h2 class="post-title">
-                <a href="content.html" title="">异步测试文章</a>
-            </h2>
-            <div class="meta-box">
-            <span class="m-post-date">
-              <i class="fa fa-calendar-o">
-              </i>
-              2015年6月3日
-            </span>
-            <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
-                  <i class="fa fa-comments-o">
-                  </i>
-                  留言
-              </a>
-            </span>
-            </div>
-            <div class="post-content">
-                <p>
-                    leaves由异步制作,欢迎大家使用
-                    <a href="http://www.ybsat.com">
-                        这是一个链接
-                    </a>
-                </p>
-            </div>
-            <div class="meta-box">
-            <span class="cat-links">
-              <i class="fa fa-navicon">
-              </i>
-              <b>
-                  分类:
-              </b>
-              <a href="">
-                  测试
-              </a>
-            </span>
-            <span class="tag-links">
-              <i class="fa fa-tags">
-              </i>
-              <b>
-                  标签:
-              </b>
-              <a href="" rel="tag">
-                  异步
-              </a>
-            </span>
-            </div>
-        </div>
-    </div>
+    </c:forEach>
+   
     <!--分页进入第二页，一页多少可分配-->
     <div class="row post-pagination">
         <div class="col-md-12">
@@ -311,43 +107,7 @@
         <div class="col-md-4">
         </div>
     </div>
-    <footer>
-        <!--版权信息-->
-        <div class="copyright">
-            Copyright Ybsat ©2016 All rights reserved 豫ICP备15027119&nbsp;&nbsp;
-            <a href="www.ybsat.com">
-                Theme leaves by Ybsat
-            </a>
-        </div>
-    </footer>
-</div>
-<script src="assets/js/bootstrap.min.js"></script>
-<script>
-    /*banner 初始化*/
-    $(window).load(function(){
-      $('#slider').nivoSlider({
-        effect: 'random',        // 过渡效果
-        controlNav: false,       // 是否显示图片导航控制按钮（,2,3... ）
-        pauseOnHover: true,      // 鼠标县浮时是否停止动画
-        manualAdvance: false,    // 是否手动切换 
-        animSpeed: 100,          // 图片过渡时间   
-        pauseTime: 2000,         // 图片显示时间
-        pauseOnHover: false,
-        manualAdvance: false,
-      });
-    });
-    $(document).ready(function(){
-      $('body').show();
-      $('.version').text(NProgress.version);
-      NProgress.start();
-      setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-      var style2 = $(".style2")
-      style2.click(function(){
-        
-      })
-    })
-    
-</script>
+   <jsp:include page="head.jsp"/>
 </body>
 
 </html>

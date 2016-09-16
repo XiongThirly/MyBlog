@@ -29,77 +29,31 @@
     <div class="row top-title">
         <div class="col-md-12">
             <h1 class="page-title right">
-                <a href="/MyBlog/pages/blog.jsp">博客</a> >> <a href="content.html">异步测试文章</a>
+                <a href="/MyBlog/pages/blog">博客</a> >> <a href="content">${content.title }</a>
             </h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 post-container">
             <h2 class="post-title">
-                <a href="booklist.htm" tppabs="http://www.soulteary.com/booklist" rel="bookmark">
-                    异步测试文章
+                <a href="">
+                  ${content.title }
                 </a>
             </h2>
             <div class="meta-box">
             </div>
             <div class="post-content">
                 <p>
-                    这是本文的简介,可以是文章的前一部分内容,或者是作者对本文所做的一些概括
+                   ${content.abstracts }
                 </p>
                 <hr/>
-                <section>
-                    <div class="main-container">
-                        <div class="row">
-                            <p>
-                            这是本文的内容,举例,今天是不错的一天,因为今天leaves主题从黑色变成白色的了,虽然说白色的看起来更漂亮,但是我依然不会放弃黑色的主题的,我会对黑色的主题进行再次重构,等到下次更新的时候我们就会看到不一样的黑色主题．
-                            </p>
-                            <p>
-                                其次就是本次新增填了文章音乐播放器,在看文章的时候您可以点开本文所带的音乐,或是一首或是几首,为您带来一段愉悦的时光,当然本文是将音乐放在最下方了,您也可以选择放在本文的最上方
-                            </p>
-                            <div id="player3" class="aplayer"></div>
-                        </div>
-                    </div>
-                </section>
+            ${content.content }
                 <div class="meta-box">
                 </div>
             </div>
         </div>
     </div>
-    <footer>
-        <!--版权信息-->
-        <div class="copyright">
-            Copyright Ybsat ©2016 All rights reserved 豫ICP备15027119&nbsp;&nbsp;
-            <a href="www.ybsat.com">
-                Theme leaves by Ybsat
-            </a>
-        </div>
-    </footer>
-</div>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/APlayer/dist/APlayer.min.js"></script>
-<script src="assets/APlayer/demo/demo.js"></script>
-<script>
-        /*banner 初始化*/
-        $(window).load(function() {
-         $('#slider').nivoSlider({
-            effect: 'random',        // 过渡效果
-            controlNav: false,       // 是否显示图片导航控制按钮（,2,3... ）
-            pauseOnHover: true,      // 鼠标县浮时是否停止动画
-            manualAdvance: false,    // 是否手动切换 
-            animSpeed: 100,          // 图片过渡时间   
-            pauseTime: 2000,         // 图片显示时间
-            pauseOnHover: false,
-            manualAdvance: false,
-        });
-        });
-    $(document).ready(function(){
-        $('body').show();
-        $('.version').text(NProgress.version);
-        NProgress.start();
-        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-    })
-    
-</script>
+     <jsp:include page="head.jsp"/>
 </body>
 
 </html>

@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>404错误</title>
-
+<title>NoGrant</title>
+</head>
 <style type="text/css">
 body,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
 body{font:14px/1.5 'Microsoft YaHei','微软雅黑',Helvetica,Sans-serif;min-width:1200px;background:#f0f1f3;}
@@ -35,15 +35,15 @@ a:hover{text-decoration:underline}
     <div class="error-page-container">
         <div class="error-page-main">
             <h3>
-                <strong>404</strong>无法打开页面
+                <strong>Sorry</strong>您没有注册的权限
             </h3>
             <div class="error-page-actions">
                 <div>
-                    <h4>可能原因：</h4>
+                    <h4>您可以：</h4>
                     <ol>
-                        <li>网络信号差</li>
-                        <li>找不到请求的页面</li>
-                        <li>输入的网址不正确</li>
+                        <li>联系站点管理员</li>
+                        <li>向Thirly获取邀请码</li>
+                        <li>不注册只看看</li>
                     </ol>
                 </div>
                 <div>

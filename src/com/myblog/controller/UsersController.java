@@ -40,13 +40,15 @@ public class UsersController {
    * @return  map
    * @throws IOException
    */
-	@RequestMapping(value="/login",method=RequestMethod.POST)
+	@RequestMapping(value="/loginin",method=RequestMethod.POST)
 	@ResponseBody
 	 public Map<String,String> login(user user,HttpServletRequest request) throws IOException{
 	  Map<String, String> map = new HashMap<String, String>();  	
 	
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user); 	
+		session.setAttribute("userName", user.getName()); 	
+		session.setAttribute("userImg", user.getImg()); 	
 		try{
 	        user = userService.getUserInfo(user);
 	       
@@ -62,18 +64,7 @@ public class UsersController {
 	    return map;
 	    } 
 	
-	@RequestMapping(value="/Show",method=RequestMethod.POST)
-	@ResponseBody
-	public List<user> Show() throws IOException{                
-        List<user> listStr = new ArrayList<user>();
-        try {
-        	listStr = userService.getList();   
-			} catch (Exception e) {
-				e.printStackTrace();				
-			}	                    
-      
-     return listStr;
-     }
+
 	
 	@RequestMapping(value="/Count",method=RequestMethod.POST)
 	@ResponseBody
@@ -87,50 +78,9 @@ public class UsersController {
       //System.out.println(listStr);
      return listStr;
      }
+
 	
-	@RequestMapping(value="/Page",method=RequestMethod.POST)
-	@ResponseBody
-	public List<user> Page(String startIndex) throws IOException{
-		int start = Integer.parseInt(startIndex);
-		//int size = Integer.parseInt(sizeCount);
-		//System.out.println(start);		
-        List<user> listStr = new ArrayList<user>();
-       try {
-        	listStr = userService.getListCount(start);   
-			} catch (Exception e) {
-				e.printStackTrace();				
-			}	                    
-      //System.out.println(start+size);
-     return listStr;
-     }
-	
-	@RequestMapping(value="/Update",method=RequestMethod.POST)
-	@ResponseBody
-	public boolean Update(user user) throws IOException{                      				
-	    boolean result = false;
-	    try {
-        	 userService.update(user); 
-        	 result = true;
-			} catch (Exception e) {
-				e.printStackTrace();				
-			}                      
-     return result;
-	}
-	
-	@RequestMapping(value="/Delete",method=RequestMethod.POST)
-	@ResponseBody
-	public boolean Delete(int id) throws IOException{                      			
-	    boolean result = false;
-	    try {
-       	 userService.deleteUser(id); 
-       	 result = true;
-			} catch (Exception e) {
-				e.printStackTrace();				
-			}                         
-     return result;
-	}
-	
-	@RequestMapping(value="/Insert",method=RequestMethod.POST)
+	@RequestMapping(value="/registerOn",method=RequestMethod.POST)
 	@ResponseBody
 	public boolean Insert(user user) throws IOException{                      				
 	    boolean result = false;
@@ -143,43 +93,7 @@ public class UsersController {
      return result;
 	}
 	
-	@RequestMapping(value="/Edit",method=RequestMethod.POST)
-	@ResponseBody
-	public boolean Edit(HttpSession session) throws IOException{	
-		user user1 = (user)session.getAttribute("user");
-	    boolean result = false;
-	    try {
-	       	user1 = userService.getUserInfo(user1); 
-	       	if(user1.getFlag() == 1){
-	       	 result = false;
-	       	 }
-	       	else{
-	       		result = true;
-	       	}
-				} catch (Exception e) {
-					e.printStackTrace();				
-				} 
-     return result;
-	}
+
 	
-	@RequestMapping(value="/GetList",method=RequestMethod.POST)
-	@ResponseBody
-	public void GetList(user user) throws IOException{ 
-		List.add(user);        
-	}	
-	
-	@RequestMapping(value="/UpdateAll",method=RequestMethod.POST)
-	@ResponseBody
-	public boolean UpdateAll() throws IOException{ 		
-	    boolean result = false;
-	    try {
-	    	//System.out.println(List);
-        	 userService.updateAll(List); 
-        	 result = true;
-			} catch (Exception e) {
-				e.printStackTrace();				
-			} 
-	    List.clear();
-     return result;
-	}	
+
 }

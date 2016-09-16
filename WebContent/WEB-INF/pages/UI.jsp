@@ -25,7 +25,7 @@
             <span class="icon-bar">
             </span>
             </button>
-            <a class="navbar-brand" href="index.jsp">
+            <a class="navbar-brand" href="index">
                 <img src="/MyBlog/static/assets/img/logo.png" class="logo"/>
             </a>
         </div>
@@ -74,12 +74,10 @@
     <!-- 左菜单 -->
     <div class="left_menu">
         <ul class="menu_link">
-            <li><c:if test="${sessionScope.user==null}">
+            <li>
                 <a href="${pageContext.request.contextPath }/pages/login" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-toggle="tooltip" data-placement="right" title="登陆"></c:if>
-                   <c:if test="${sessionScope.user!=null}">
-                <a href="${pageContext.request.contextPath }/pages/login" class="simptip-position-right simptip-smooth simptip-movable"
-                   data-toggle="tooltip" data-placement="right" title="注销"></c:if>
+                   data-toggle="tooltip" data-placement="right" title="登陆">
+            
                     <img src="/MyBlog/static/assets/img/login.png">
               <span>
                 自定义链接
@@ -88,9 +86,11 @@
                     </div>
                 </a>
             </li>
+          
             <li data-toggle="tooltip" data-placement="right" title="博客">
-                <a href="${pageContext.request.contextPath }/pages/register" class="simptip-position-right simptip-smooth simptip-movable"
+                <a href="${pageContext.request.contextPath }/pages/editor.do" class="simptip-position-right simptip-smooth simptip-movable"
                    target="_black">
+                  
                     <img src="/MyBlog/static/assets/img/login.png">
               <span>
                 注册

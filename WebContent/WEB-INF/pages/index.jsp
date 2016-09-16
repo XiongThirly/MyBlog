@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="cn" dir="ltr" class="no-js">
@@ -11,7 +12,7 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
+    <title>Thirly的博客</title>
     <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
     <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
@@ -36,16 +37,17 @@
             </div>
         </div>
     <!--main Start-->
+    <c:forEach var="context" items="${listStr}" >
     <div class="row">
         <div class="col-md-12 post-container">
             <h2 class="post-title">
-                <a href="${pageContext.request.contextPath }/pages/content.jsp" title="">异步测试文章</a>
+                <a href="${pageContext.request.contextPath }/pages/content?title=${context.title}" title="">${context.title}</a>
             </h2>
             <div class="meta-box">
             <span class="m-post-date">
               <i class="fa fa-calendar-o">
               </i>
-              2015年6月3日
+            ${context.time}
             </span>
             <span class="comments-link">
               <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
@@ -56,12 +58,7 @@
             </span>
             </div>
             <div class="post-content">
-                <p>
-                    如果您在使用中遇到什么麻烦的事情,那么baby千万不要捶胸顿足,在友情链接界面您会看到作者的博客链接，您可以通过访问作者的博客留言联系我
-                    <a href="http://www.ybsat.com">
-                        联系我
-                    </a>
-                    </p>
+                ${context.abstracts}
             </div>
             <div class="meta-box">
             <span class="cat-links">
@@ -71,7 +68,7 @@
                   分类:
               </b>
               <a href="topics/life/diary.htm">
-                  测试
+                  ${context.type}
               </a>
             </span>
             <span class="tag-links">
@@ -86,64 +83,14 @@
             </span>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 post-container">
-            <h2 class="post-title">
-                <a href="${pageContext.request.contextPath }/pages/content.jsp" title="">异步测试文章</a>
-            </h2>
-            <div class="meta-box">
-            <span class="m-post-date">
-              <i class="fa fa-calendar-o">
-              </i>
-              2015年6月3日
-            </span>
-            <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
-                  <i class="fa fa-comments-o">
-                  </i>
-                  留言
-              </a>
-            </span>
-            </div>
-            <div class="post-content">
-                <p>
-                    leaves轻博客主要是将大家在博客中不需要的一些东西直接切割掉,只保存最实用的东西,这样使leaves变得更加简洁,同时更显得大方,由于leaves基于bootstrap所以说如果您想定制一些需要的东西是很好改动的．
-                    <a href="">
-                        这是一个链接
-                    </a>
-                    如果您觉得本博客的内容不够您的使用,您可以咨询作者,作者是很乐意为广大用户奉献代码的！
-                </p>
-            </div>
-            <div class="meta-box">
-            <span class="cat-links">
-              <i class="fa fa-navicon">
-              </i>
-              <b>
-                  分类:
-              </b>
-              <a href="topics/life/diary.jsp">
-                  测试
-              </a>
-            </span>
-            <span class="tag-links">
-              <i class="fa fa-tags">
-              </i>
-              <b>
-                  标签:
-              </b>
-              <a href="tags/毕业.jsp" rel="tag">
-                  异步
-              </a>
-            </span>
-            </div>
-        </div>
-    </div>
+    </div></c:forEach>
+    
+          
     <!--更多内容-->
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-title">
-                <a href="${pageContext.request.contextPath }/blog.jsp" title="">更多内容</a>
+                <a href="${pageContext.request.contextPath }/blog" title="">更多内容</a>
             </h2>
         </div>
     </div>
@@ -152,7 +99,7 @@
         <div class="col-md-12 post-container">
             <div class="row">
                 <div class="col-md-4">
-                    <a class="btn btn-primary home-browser-more-btn" href="${pageContext.request.contextPath }/blog.jsp">
+                    <a class="btn btn-primary home-browser-more-btn" href="${pageContext.request.contextPath }/blog">
                         <span>浏览更多文章</span>
                     </a>
                 </div>
@@ -184,39 +131,7 @@
         </div>
     </div>
     <!-- 网站底部 -->
-    <footer>
-        <!--版权信息-->
-        <div class="copyright">
-            Copyright Ybsat ©2016 All rights reserved 鄂ICP备19940904&nbsp;&nbsp;
-            <a href="www.ybsat.com">
-                Theme leaves by Ybsat
-            </a>
-        </div>
-    </footer>
-</div>
-<script src="assets/js/bootstrap.min.js"></script>
-<script>
-        /*banner 初始化*/
-        $(window).load(function() {
-         $('#slider').nivoSlider({
-            effect: 'random',        // 过渡效果
-            controlNav: false,       // 是否显示图片导航控制按钮（,2,3... ）
-            pauseOnHover: true,      // 鼠标县浮时是否停止动画
-            manualAdvance: false,    // 是否手动切换 
-            animSpeed: 100,          // 图片过渡时间   
-            pauseTime: 2000,         // 图片显示时间
-            pauseOnHover: false,
-            manualAdvance: false,
-        });
-        });
-    $(document).ready(function(){
-        $('body').show();
-        $('.version').text(NProgress.version);
-        NProgress.start();
-        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
-    })
-    
-</script>
+     <jsp:include page="head.jsp"/>
 </body>
 
 </html>

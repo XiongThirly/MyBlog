@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.myblog.dao.contextDao" >
+  <!-- 取得用户列表 -->
+	<select id="getContext" resultType="ContextInfo" >
+		select * from  context  order by contextid desc limit 3
+	</select>
+	
+		<select id="getAllContext" resultType="ContextInfo" >
+select * from  context  order by contextid desc 
+	</select>
+	
+<select id="getContent" parameterType="String" resultType="ContextInfo" >
+		select * from context where title=#{title}
+	</select>
+	
+	<select id="getContextCount" resultType="Integer" >
+		select count(*) from context  
+	</select>
+
+	
+	<!-- 新增用户 -->
+	<insert id="insertContext" >
+		insert into context(contextid,title,author,type,time,content,comment,abstracts) values(#{contextid},#{title},#{author},#{type},#{time},#{content},#{comment},#{abstracts})		
+	</insert>
+
+	<!-- 删除用户 -->
+	<delete id="deleteContext" parameterType="int">
+		delete from context where contextid=#{contextid}
+	</delete>
+
+</mapper>

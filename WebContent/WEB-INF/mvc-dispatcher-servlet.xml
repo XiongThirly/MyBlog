@@ -13,8 +13,21 @@
 	<mvc:annotation-driven />
 	
 	<mvc:resources mapping="/static/**" location="/static/"/>  
-    <mvc:default-servlet-handler/>  
-     
+
+ <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*.do/"/>
+              <mvc:mapping path="/**/*.jsp/"/>
+            <bean id="loginInterceptor" class="com.myblog.filter.SecurityFilter"/>
+        </mvc:interceptor>
+    </mvc:interceptors> 
+<!--  
+ <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*.do/"/>
+            <bean id="registerInterceptor" class="com.myblog.filter.registerFilter"/>
+        </mvc:interceptor>
+    </mvc:interceptors> -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">

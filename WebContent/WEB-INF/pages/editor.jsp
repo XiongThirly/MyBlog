@@ -3,175 +3,148 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>完整demo</title>
+    <title>新建博客</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <script type="text/javascript" charset="utf-8" src="../static/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../static/ueditor.all.min.js"> </script>
+      
     <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
     <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-   
+   <script src="/MyBlog/static/js/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/lang/zh-cn/zh-cn.js"></script>
-
-    <style type="text/css">
-        div{
-            width:100%;
-        }
-    </style>
-</head>
-<body>
-<div>
-    <h1>完整demo</h1>
-    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
-</div>
-<div id="btns">
-    <div>
-        <button onclick="getAllHtml()">获得整个html的内容</button>
-        <button onclick="getContent()">获得内容</button>
-        <button onclick="setContent()">写入内容</button>
-        <button onclick="setContent(true)">追加内容</button>
-        <button onclick="getContentTxt()">获得纯文本</button>
-        <button onclick="getPlainTxt()">获得带格式的纯文本</button>
-        <button onclick="hasContent()">判断是否有内容</button>
-        <button onclick="setFocus()">使编辑器获得焦点</button>
-        <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
-        <button onmousedown="setblur(event)" >编辑器失去焦点</button>
-
-    </div>
-    <div>
-        <button onclick="getText()">获得当前选中的文本</button>
-        <button onclick="insertHtml()">插入给定的内容</button>
-        <button id="enable" onclick="setEnabled()">可以编辑</button>
-        <button onclick="setDisabled()">不可编辑</button>
-        <button onclick=" UE.getEditor('editor').setHide()">隐藏编辑器</button>
-        <button onclick=" UE.getEditor('editor').setShow()">显示编辑器</button>
-        <button onclick=" UE.getEditor('editor').setHeight(300)">设置高度为300默认关闭了自动长高</button>
-    </div>
-
-    <div>
-        <button onclick="getLocalData()" >获取草稿箱内容</button>
-        <button onclick="clearLocalData()" >清空草稿箱</button>
-    </div>
-
-</div>
-<div>
-    <button onclick="createEditor()">
-    创建编辑器</button>
-    <button onclick="deleteEditor()">
-    删除编辑器</button>
-</div>
-
+    <script type="text/javascript" charset="utf-8" src="../static/Validform/Validform_v5.3.2_min.js"></script>
 <script type="text/javascript">
+function BtnClick(){
+	 var error = $('.Error');
+	 var error1 = $('.Error1');
+	 var error2= $('.Error2');
+	 var error3 = $('.Error3');
+	 
+	var d = new Date();
+	var time = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+	var title = $("#title").val();
+	var content = UE.getEditor('editor').getContent();
+	var type =  $('#we input[name="type"]:checked ').val();
+	var abstracts  = $("#abstracts").val();
+	
 
-    //实例化编辑器
-    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('editor');
+	
+	if(title == '' ||content == '' || type=='') {
+		  error.html('<font color="red">*标题不能为空!</font>');
+		  error1.html('<font color="red">*请填写内容！</font>');
+		  error2.html('<font color="red">*请选择一个分类！</font>');
+		  error3.html('<font color="red">*摘要不能为空!</font>');
+	
+		  return false;
+		 }  else {
+	
 
-
-    function isFocus(e){
-        alert(UE.getEditor('editor').isFocus());
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function setblur(e){
-        UE.getEditor('editor').blur();
-        UE.dom.domUtils.preventDefault(e)
-    }
-    function insertHtml() {
-        var value = prompt('插入html代码', '');
-        UE.getEditor('editor').execCommand('insertHtml', value)
-    }
-    function createEditor() {
-        enableBtn();
-        UE.getEditor('editor');
-    }
-    function getAllHtml() {
-        alert(UE.getEditor('editor').getAllHtml())
-    }
-    function getContent() {
-        var arr = [];
-        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getContent());
-        alert(arr.join("\n"));
-    }
-    function getPlainTxt() {
-        var arr = [];
-        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getPlainTxt());
-        alert(arr.join('\n'))
-    }
-    function setContent(isAppendTo) {
-        var arr = [];
-        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
-        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
-        alert(arr.join("\n"));
-    }
-    function setDisabled() {
-        UE.getEditor('editor').setDisabled('fullscreen');
-        disableBtn("enable");
-    }
-
-    function setEnabled() {
-        UE.getEditor('editor').setEnabled();
-        enableBtn();
-    }
-
-    function getText() {
-        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
-        var range = UE.getEditor('editor').selection.getRange();
-        range.select();
-        var txt = UE.getEditor('editor').selection.getText();
-        alert(txt)
-    }
-
-    function getContentTxt() {
-        var arr = [];
-        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
-        arr.push("编辑器的纯文本内容为：");
-        arr.push(UE.getEditor('editor').getContentTxt());
-        alert(arr.join("\n"));
-    }
-    function hasContent() {
-        var arr = [];
-        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
-        arr.push("判断结果为：");
-        arr.push(UE.getEditor('editor').hasContents());
-        alert(arr.join("\n"));
-    }
-    function setFocus() {
-        UE.getEditor('editor').focus();
-    }
-    function deleteEditor() {
-        disableBtn();
-        UE.getEditor('editor').destroy();
-    }
-    function disableBtn(str) {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            if (btn.id == str) {
-                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
-            } else {
-                btn.setAttribute("disabled", "true");
+	$.ajax({  
+		
+        data:{"time":time,"title":title,"content":content,"type":type,"abstracts":abstracts}, 
+        type:"POST",  
+        dataType: 'json',  
+        url:"inputFile",  
+        
+        success:function(data){        	
+           if(data["mag"] == "2")  {
+        	location=location 
+           alert("发布成功")
             }
+           else{
+        	 alert("抱歉发表失败")
+           }
+        },
+        error:function(){
+        	alert("出现错误");
         }
-    }
-    function enableBtn() {
-        var div = document.getElementById('btns');
-        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
-        for (var i = 0, btn; btn = btns[i++];) {
-            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
-        }
-    }
+        });   
+	  return true;
+			 }
 
-    function getLocalData () {
-        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
-    }
+}
 
-    function clearLocalData () {
-        UE.getEditor('editor').execCommand( "clearlocaldata" );
-        alert("已清空草稿箱")
-    }
 </script>
-</body>
+<style> 
+.fonts{ font-family:"楷体"; font-size:26px; font-style:italic;}
+
+textarea
+{
+width:100%;
+height:100%;
+}
+span{
+    color:#dcdcdc;
+	font-weight:bold;
+}
+ 
+
+body{ text-align:left;} 
+.div{ margin:0 auto; width:900px; height:1000px; border:0px solid #dcdcdc} 
+.div1{ margin:0 auto; width:900px; height:150px; border:0px solid #dcdcdc} 
+.div2{ margin:0 auto; width:900px; height:400px; border:1px solid #dcdcdc} 
+.div3{ margin:0 auto; width:900px; height:100px; border:1px solid #dcdcdc} 
+
+
+
+</style> 
+</head> 
+<body style="background-image:url(../static/assets/img/wave.png); background-repeat:repeat-y;"></body>
+<div class="div"> 
+<div class="div1">
+<div style=" width:150px; height:150px;float:left">
+	<img src="${sessionScope.userImg}"/></div>
+	<div style="float:left;width:600px" class="fonts"><p>${sessionScope.userName}的个人博客</p>
+	<a href="${pageContext.request.contextPath }/pages/personal">个人中心</a>
+	</div>
+	
+</div>
+<hr>
+
+<span>文章标题:</span><span class="Error"></span>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<input type="text" style="width:900px;" id="title" autocomplete="off"/>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<span>文章内容:</span><span class="Error1"></span>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<div class="div2">
+   <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+   
+    </script>
+    <script id="editor" type="text/plain" style="width:900px;height:400px;"></script>
+    <!-- 配置文件 -->
+   <script type="text/javascript" charset="utf-8" src="../static/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/ueditor.all.min.js"> </script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+    var editor = new UE.ui.Editor({initialFrameHeight:400,initialFrameWidth:900});
+        var editor  = UE.getEditor('editor');
+    </script>
+</div>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<span>文章分类:</span><span class="Error2"></span>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<div id="we">
+<label><input name="type" type="radio" value="移动开发" />移动开发 </label> 
+<label><input name="type" type="radio" value="Web前端" />Web前端 </label> 
+<label><input name="type" type="radio" value="J2E框架" />J2E框架 </label> 
+<label><input name="type" type="radio" value="编程语言" />编程语言</label> 
+<label><input name="type" type="radio" value="数据库 " />数据库 </label> 
+
+</div>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<span>摘要:</span> </span><span class="Error3"></span>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;" />
+<div class="div3">
+	<textarea cols="50" rows="5" id="abstracts" autocomplete="off"   ></textarea>
+
+</div>
+<br>
+<button id="submit" type="submit" onclick="BtnClick()">提交</button><br>
+</div> 
+
+
+</div> 
+
+</body> 
+
 </html>

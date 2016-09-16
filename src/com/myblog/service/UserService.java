@@ -9,7 +9,7 @@ import com.myblog.entities.*;;
 @Service
 public interface UserService {
 	
-	public List<user> getList() throws Exception;
+	public user getuserinfo() throws Exception;
 	
 	public List<user> getListCount(int start) throws Exception;
 	
