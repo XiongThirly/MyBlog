@@ -5,6 +5,8 @@
     <typeAliases> 
         <typeAlias alias="UserInfo" type="com.myblog.entities.user"/>
         <typeAlias alias="ContextInfo" type="com.myblog.entities.context"/>
+         <typeAlias alias="pageinfo" type="com.myblog.entities.page"/>
+          <typeAlias alias="commentsInfo" type="com.myblog.entities.comments"/>
      
     </typeAliases> 
     

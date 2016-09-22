@@ -16,8 +16,19 @@ public class context {
     private String content;
 
     private String abstracts;
+    
+    private int flag;
+    
 
-    public int getContextid() {
+    public int getFlag() {
+		return flag;
+	}
+
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
+
+	public int getContextid() {
         return contextid;
     }
 

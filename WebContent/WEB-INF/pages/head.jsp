@@ -10,14 +10,14 @@
  <footer>
         <!--版权信息-->
         <div class="copyright">
-            Copyright Ybsat ©2016 All rights reserved 豫ICP备15027119&nbsp;&nbsp;
+            Copyright Thirly ©2016 All rights reserved 鄂ICP备16018438&nbsp;&nbsp;
             <a href="www.ybsat.com">
                 Theme leaves by Ybsat
             </a>
         </div>
     </footer>
 </div>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath }/static/assets/js/bootstrap.min.js"></script>
 <script>
     /*banner 初始化*/
     $(window).load(function(){

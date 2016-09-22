@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.myblog.dao.contextDao" >
-  <!-- 取得用户列表 -->
-	<select id="getContext" resultType="ContextInfo" >
-		select * from  context  order by contextid desc limit 3
-	</select>
-	
-		<select id="getAllContext" resultType="ContextInfo" >
-select * from  context  order by contextid desc 
-	</select>
-	
-<select id="getContent" parameterType="String" resultType="ContextInfo" >
-		select * from context where title=#{title}
-	</select>
-	
-	<select id="getContextCount" resultType="Integer" >
-		select count(*) from context  
+<mapper namespace="com.myblog.dao.contextDao">
+	<!-- 取得用户列表 -->
+	<select id="getContext" resultType="ContextInfo">
+		select * from
+		context  where flag=0 order by time desc limit 3
 	</select>
 
+<select id="getContextById" resultType="ContextInfo"  parameterType="int">
+		select * from
+		context  where contextID=#{id}
+	</select>
+
+	<select id="getAllContext" resultType="ContextInfo">
+		select * from context where flag=0 order by time desc 
+	</select>
+<!--  分页查询-->
+	<select id="getPageContext" resultType="ContextInfo">
+		select * from context  where flag=#{flag} order by time desc limit #{startPage},#{endPage}
+	</select>
 	
-	<!-- 新增用户 -->
-	<insert id="insertContext" >
-		insert into context(contextid,title,author,type,time,content,comment,abstracts) values(#{contextid},#{title},#{author},#{type},#{time},#{content},#{comment},#{abstracts})		
+	<select id="getRecycleContent" resultType="ContextInfo">
+		select * from context  where flag=1 order by time desc limit #{startPage},#{endPage}
+	</select>
+	
+	<!--按条件查询  -->
+	<select id="search" resultType="ContextInfo">
+		select * from context  where type=#{type} and title LIKE CONCAT(CONCAT('%', #{title}), '%')
+	</select>
+
+	<select id="getContent" parameterType="Integer" resultType="ContextInfo">
+		select * from context where contextid=#{id}
+	</select>
+
+	<select id="getContextCount" resultType="Integer"  parameterType="Integer" >
+		select
+		count(*) from context  where flag=#{flag}
+	</select>
+	
+	<!-- 修改信息 -->
+<update id="updateContent" parameterType="ContextInfo">
+		update context
+		<trim prefix="set" suffixOverrides=",">
+		
+			<if test="title != null">title=#{title},</if>
+			<if test="author != null">author=#{author},</if>
+			<if test="type != null">type=#{type},</if>
+			<if test="time != null">time=#{time},</if>
+			<if test="comment != null">comment=#{comment},</if>
+			<if test="content != null">content=#{content},</if>
+			<if test="abstracts != null">abstracts=#{abstracts},</if>
+			<if test="flag != null">flag=#{flag},</if>
+		</trim>
+		where contextid=#{contextid}
+	</update>
+
+	<!-- 新增信息 -->
+	<insert id="insertContext">
+		insert into
+		context(title,author,type,time,content,comment,abstracts)
+		values(#{title},#{author},#{type},#{time},#{content},#{comment},#{abstracts})
 	</insert>
 
-	<!-- 删除用户 -->
+	<!-- 删除信息 -->
 	<delete id="deleteContext" parameterType="int">
-		delete from context where contextid=#{contextid}
+		  update context set flag=#{flag} where contextID=#{id}
 	</delete>
 
 </mapper>

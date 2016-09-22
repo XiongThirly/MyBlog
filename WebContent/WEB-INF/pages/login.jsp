@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>登录</title>
 
-<link rel="stylesheet" href="/MyBlog/static/css/style.css" />
-<script src="/MyBlog/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/style.css" />
+<script src="${pageContext.request.contextPath }/static/js/jquery.min.js"></script>
 
 <script type="text/javascript">
  
@@ -26,7 +26,7 @@ function BtnClick(){
         
         success:function(data){        	
            if(data["message"] == "1")  {
-            location.href='index';
+            location.href='admin/design?currentpage=1';
             }
            else{
         	   location.href='Error.jsp';
@@ -60,20 +60,18 @@ function BtnClick(){
 		<button id="submit" type="submit" onclick="BtnClick()">登 陆</button><br>
 	
 
-	<a href="register.do">
-		<button type="button" class="register-tis">还有没有账号？</button>
-	</a>
+	
 
 </div>
 
 
-<script src="/MyBlog/static/js/jquery.min.js"></script>
-<script src="/MyBlog/static/js/common.js"></script>
+<script src="${pageContext.request.contextPath }/static/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/static/js/common.js"></script>
 <!--背景图片自动更换-->
-<script src="/MyBlog/static/js/supersized.3.2.7.min.js"></script>
-<script src="/MyBlog/static/js/supersized-init.js"></script>
+<script src="${pageContext.request.contextPath }/static/js/supersized.3.2.7.min.js"></script>
+<script src="${pageContext.request.contextPath }/static/js/supersized-init.js"></script>
 <!--表单验证-->
-<script src="/MyBlog/static/js/jquery.validate.min.js?var1.14.0"></script>
+<script src="${pageContext.request.contextPath }/static/js/jquery.validate.min.js?var1.14.0"></script>
 
 </body>
 </html>

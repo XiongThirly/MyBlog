@@ -13,15 +13,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Thirly的博客</title>
-    <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/default.css" type="text/css" media="screen" />
-    <script src="/MyBlog/static/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/MyBlog/static/assets/APlayer/dist/APlayer.min.css">
-    <script src="/MyBlog/static/assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="/MyBlog/static/assets/js/nprogress.js"></script>
+   
 </head>
 
 <body>
@@ -41,7 +33,7 @@
     <div class="row">
         <div class="col-md-12 post-container">
             <h2 class="post-title">
-                <a href="${pageContext.request.contextPath }/pages/content?title=${context.title}" title="">${context.title}</a>
+                <a href="${pageContext.request.contextPath }/pages/content?title=${context.contextid}" title="">${context.title}</a>
             </h2>
             <div class="meta-box">
             <span class="m-post-date">
@@ -50,7 +42,7 @@
             ${context.time}
             </span>
             <span class="comments-link">
-              <a href="" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
+              <a href="${pageContext.request.contextPath }/pages/contact" class="ds-thread-count" data-thread-key="9500" title="Comment on 毕业两周年">
                   <i class="fa fa-comments-o">
                   </i>
                   留言
@@ -67,7 +59,7 @@
               <b>
                   分类:
               </b>
-              <a href="topics/life/diary.htm">
+              <a href="#">
                   ${context.type}
               </a>
             </span>
@@ -75,10 +67,10 @@
               <i class="fa fa-tags">
               </i>
               <b>
-                  标签:
+                  作者:
               </b>
-              <a href="tags/毕业.htm" rel="tag">
-                  异步
+              <a href="${pageContext.request.contextPath }/pages/about" rel="tag">
+                  Thirly
               </a>
             </span>
             </div>
@@ -90,7 +82,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-title">
-                <a href="${pageContext.request.contextPath }/blog" title="">更多内容</a>
+                <a href="${pageContext.request.contextPath }/pages/pageBlog?currentpage=1" title="">更多内容</a>
             </h2>
         </div>
     </div>
@@ -99,7 +91,7 @@
         <div class="col-md-12 post-container">
             <div class="row">
                 <div class="col-md-4">
-                    <a class="btn btn-primary home-browser-more-btn" href="${pageContext.request.contextPath }/blog">
+                    <a class="btn btn-primary home-browser-more-btn" href="${pageContext.request.contextPath }/pages/pageBlog?currentpage=1">
                         <span>浏览更多文章</span>
                     </a>
                 </div>
@@ -114,23 +106,24 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="" class="thumbnail">
-                        <img src="assets/img/works.png" alt="作品展示">
+                        <img src="${pageContext.request.contextPath }/static/assets/img/works.png" alt="作品展示">
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="" class="thumbnail">
-                        <img src="assets/img/study.png" alt="学习生活">
+                        <img src="${pageContext.request.contextPath }/static/assets/img/study.png" alt="学习生活">
                     </a>
                 </div>
                 <div class="col-md-4">
                     <a href="" class="thumbnail">
-                        <img src="assets/img/book.png" alt="作品推荐">
+                        <img src="${pageContext.request.contextPath }/static/assets/img/book.png" alt="作品推荐">
                     </a>
                 </div>
             </div>
         </div>
     </div>
     <!-- 网站底部 -->
+      
      <jsp:include page="head.jsp"/>
 </body>
 

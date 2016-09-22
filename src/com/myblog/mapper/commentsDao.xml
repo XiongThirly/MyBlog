@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.myblog.dao.commentsDao">
+<select id="selectByPrimaryKey" resultType="commentsInfo" parameterType="java.lang.Integer" >
+    select 
+    *
+    from comments
+    where commentsId = #{id}
+  </select>
+  
+  <select id="selectComments" resultType="commentsInfo" >
+    select 
+    *
+    from comments
+  order by contextid desc
+  </select>
+  
+  	<select id="getCommentCount" resultType="Integer"  parameterType="Integer" >
+		select
+		count(*) from comments  where flag=#{flag}
+	</select>
+	
+		<select id="getPageContext" resultType="commentsInfo">
+		select * from comments  where flag=#{flag} order by time desc limit #{startPage},#{endPage}
+	</select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from comments
+    where commentsId = #{id}
+  </delete>
+  <insert id="insert" parameterType="commentsInfo" >
+    insert into comments (name, time, title, content, email)values ( #{name}, #{time}, #{title}, #{content}, #{eMail})
+  </insert>
+ <!--  <insert id="insertSelective" parameterType="andy.model.comments" >
+    insert into comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentsid != null" >
+        commentsId,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="eMail != null" >
+        e-mail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentsid != null" >
+        #{commentsid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        #{eMail,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert> -->
+<!--   <update id="updateByPrimaryKeySelective" parameterType="andy.model.comments" >
+    update comments
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        e-mail = #{eMail,jdbcType=CHAR},
+      </if>
+    </set>
+    where commentsId = #{commentsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="andy.model.comments" >
+    update comments
+    set name = #{name,jdbcType=CHAR},
+      time = #{time,jdbcType=CHAR},
+      title = #{title,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      e-mail = #{eMail,jdbcType=CHAR}
+    where commentsId = #{commentsid,jdbcType=INTEGER}
+  </update> -->
+
+</mapper>
+
+

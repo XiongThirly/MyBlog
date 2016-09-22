@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	public user getuserinfo() {
 		return userDao.getUserinfo();
 	}
-	
+	 
 	public int getCount() throws Exception{
 		return userDao.getUserCount();
 	}
@@ -36,14 +36,10 @@ public class UserServiceImpl implements UserService {
 			userDao.updateUser(user);	
 	}
 	
-	@Transactional 
-	public void updateAll(List<user> list)  {
-		for(int i=0;i<list.size();i++){
-		userDao.updateUser(list.get(i));	
-		}
+
 //		User userT = new User();		
 //		userDao.updateUser(userT);
-}
+
 
 	public int deleteUser(int id) throws Exception {
 		return userDao.deleteUser(id);

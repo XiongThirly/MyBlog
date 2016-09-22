@@ -11,16 +11,16 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
-    <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/default.css" type="text/css" media="screen" />
-    <script src="/MyBlog/static/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/MyBlog/static/assets/APlayer/dist/APlayer.min.css">
-    <script src="/MyBlog/static/assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="/MyBlog/static/assets/js/nprogress.js"></script>
+    <title>关于我 </title>
+    <link href="${pageContext.request.contextPath }/static/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath }/static/assets/css/style.css" rel="stylesheet" />
+    <link href="${pageContext.request.contextPath }/static/assets/css/nprogress.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/static/assets/css/default.css" type="text/css" media="screen" />
+    <script src="${pageContext.request.contextPath }/static/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/static/assets/APlayer/dist/APlayer.min.css">
+    <script src="${pageContext.request.contextPath }/static/assets/js/jquery.nivo.slider.pack.js"></script>
+    <script src="${pageContext.request.contextPath }/static/assets/js/nprogress.js"></script>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                     <div class="col-md-12">
                         <div class="thumbnail">
                             <a href="javascript:;">
-                                <img title="关于我 @Thirly" src="assets/img/about.png" alt="关于我 @Thirly"
+                                <img title="关于我 @Thirly" src="${pageContext.request.contextPath }/static/assets/img/about.png" alt="关于我 @Thirly"
                                 />
                             </a>
                             <div class="caption">
@@ -78,23 +78,20 @@
                                 <li>
                                     腾讯QQ:
                                     <kbd>
-                                        @1150097958
+                                        1150097958
                                     </kbd>
                                 </li>
                                 <li>
                                     新浪微博:
                                     <kbd>
-                                        http://weibo.com/Thirlyxiong 
+                                        http://weibo.com/Thirlyxiong
                                     </kbd>
                                 </li>
-                                <li>
-                                    腾讯微博:
-                                    <kbd>
-                                        
-                                </li>
+                          
                                 <li>
                                     我的GIT:
                                     <kbd>
+                                   https://github.com/XiongThirly
                                     </kbd>
                                 </li>
                             </ul>

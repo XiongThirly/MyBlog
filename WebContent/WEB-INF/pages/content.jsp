@@ -11,16 +11,8 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
-    <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/default.css" type="text/css" media="screen" />
-    <script src="/MyBlog/static/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/MyBlog/static/assets/APlayer/dist/APlayer.min.css">
-    <script src="/MyBlog/static/assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="/MyBlog/static/assets/js/nprogress.js"></script>
+    <title>${content.title } </title>
+
 </head>
 
 <body>
@@ -29,7 +21,7 @@
     <div class="row top-title">
         <div class="col-md-12">
             <h1 class="page-title right">
-                <a href="/MyBlog/pages/blog">博客</a> >> <a href="content">${content.title }</a>
+                <a href="${pageContext.request.contextPath }/pages/pageBlog?currentpage=1">博客</a> >> <a href="#">${content.title }</a>
             </h1>
         </div>
     </div>
@@ -50,6 +42,7 @@
             ${content.content }
                 <div class="meta-box">
                 </div>
+                 <div id="player3" class="aplayer"></div>
             </div>
         </div>
     </div>

@@ -35,15 +35,15 @@ a:hover{text-decoration:underline}
     <div class="error-page-container">
         <div class="error-page-main">
             <h3>
-                <strong>Sorry</strong>您没有注册的权限
+                <strong>Sorry</strong>您还没有登录
             </h3>
             <div class="error-page-actions">
                 <div>
                     <h4>您可以：</h4>
                     <ol>
                         <li>联系站点管理员</li>
-                        <li>向Thirly获取邀请码</li>
-                        <li>不注册只看看</li>
+                        <li>现在就去登录</li>
+                        <li>不登录只看看</li>
                     </ol>
                 </div>
                 <div>

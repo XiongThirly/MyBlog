@@ -19,7 +19,7 @@ public interface UserService {
 	
 	public void update(user user) throws Exception;
 	
-	public void updateAll(List<user> list) throws Exception;
+	
 	
 	public int deleteUser(int id) throws Exception;
 	

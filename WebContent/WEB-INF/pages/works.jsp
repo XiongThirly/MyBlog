@@ -11,16 +11,8 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
-    <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/default.css" type="text/css" media="screen" />
-    <script src="/MyBlog/static/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/MyBlog/static/assets/APlayer/dist/APlayer.min.css">
-    <script src="/MyBlog/static/assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="/MyBlog/static/assets/js/nprogress.js"></script></script>
+    <title>作品 </title>
+   
 </head>
 
 <body>
@@ -63,31 +55,31 @@
                     <div class="meta-box"></div>
                     <div class="row">
 
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
                     </div>
                     <div class="meta-box"></div>
                     <div class="row">
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group1"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
                     </div>
                     <div class="meta-box"></div>
                     <div class="row">
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group2"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
                     </div>
                     <div class="meta-box"></div>
                     <div class="row">
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
-                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "assets/img/backgrounds/1.jpg" ><img  src = "assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
+                        <div class="col-md-3"><a  class = "fancybox"  rel = "group3"  href = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg" ><img  src = "${pageContext.request.contextPath }/static/assets/img/backgrounds/1.jpg"  alt = ""  width="100%"/></a></div>
                     </div>
                     <div class="meta-box"></div>
                 </div>

@@ -25,10 +25,10 @@
 	<update id="updateUser">
 		update user
 		<set>
-			<if test="username != null">name=#{name},</if>
+			<if test="name != null">name=#{name},</if>
 			<if test="password != null">password=#{password},</if>
 		</set>
-		where id=#{id}
+		where id=1
 	</update>
 	<!-- 删除用户 -->
 	<delete id="deleteUser" parameterType="int">

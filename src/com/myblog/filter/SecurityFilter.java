@@ -24,22 +24,20 @@ public class SecurityFilter extends HandlerInterceptorAdapter  {
             String url = request.getRequestURL().toString();
             
             
-            Object porn= request.getAttribute("porn");
-            System.out.println(porn);
-            if(!("thirly".equals(porn))){
-         	   porn=null;
-            }
-            System.out.println(url);
-            System.out.println(porn);
-            if(url.indexOf("register")>0&&porn==null){
-              	request.getRequestDispatcher("/NoGrant.jsp").forward(request, response);
-             	
-             System.out.println("ok");
-            }
-                if (user==null&&url.indexOf("editor")>0) {
+    
+            if (user!=null&&url.indexOf("login")>0) {
+            	
+            	//request.getRequestDispatcher("admin/design.do").forward(request, response);
+            	response.sendRedirect("admin/design");
+            	
+                return true;
+
+        }
+      
+                if (user==null&&url.indexOf("admin")>0) {
                 	
-            	request.getRequestDispatcher("/pages/login").forward(request, response);
-            	System.out.println("ok");
+                	request.getRequestDispatcher("/NoGrant.jsp").forward(request, response);
+            
             return true;
     
             }

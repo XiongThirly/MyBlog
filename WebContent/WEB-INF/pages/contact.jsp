@@ -12,18 +12,45 @@
     <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>异步 </title>
-    <link href="/MyBlog/static/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/style.css" rel="stylesheet" />
-    <link href="/MyBlog/static/assets/css/nprogress.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/nivo-slider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/MyBlog/static/assets/css/default.css" type="text/css" media="screen" />
-    <script src="/MyBlog/static/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/MyBlog/static/assets/APlayer/dist/APlayer.min.css">
-    <script src="/MyBlog/static/assets/js/jquery.nivo.slider.pack.js"></script>
-    <script src="/MyBlog/static/assets/js/nprogress.js"></script>
-</head>
+    <title>留言 </title>
 
+</head>
+<script src="${pageContext.request.contextPath }/static/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+ 
+
+function BtnClick(){
+	var d = new Date();
+	var time = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+	var name = $("#name").val();
+	var title = $("#title").val();
+	var content = $("#contact").val();
+	var email = $("#email").val();
+
+	$.ajax({  
+        data:{"name":name, "title":title,"content":content,"eMail":email,"time":time}, 
+        type:"POST",  
+        dataType: 'json',  
+        url:"insertComments",  
+        
+        success:function(data){        	
+           if(data["comments"] == 1)  {
+        	   alert("留言成功");
+            }
+           else{
+        	   location.href='error.jsp';
+           }
+        },
+        error:function(){
+        	alert("失败！");
+        }
+        });   
+	
+
+}
+		
+</script>
 <body>
 <jsp:include page="UI.jsp"/>
 <div class="container-fluid main-container contact" id="main-container">
@@ -72,12 +99,12 @@
                     已经介绍的比较详细了，如果你想联系我的话，不妨写信给我。
                 </p>
                 <p>
-                    <a class="btn btn-sm btn-primary" href="mailto:7248478999@qq.com" target="_blank">
+                    <a class="btn btn-sm btn-primary" href="mailto:1150097958@qq.com" target="_blank">
                         <i class="fa fa-qq">
                         </i>
                         QQ邮箱
                     </a>
-                    <a class="btn btn-sm btn-primary" href="mailto:junqianhen@gmail.com" target="_blank">
+                    <a class="btn btn-sm btn-primary" href="mailto:thirlyxiong@gmail.com" target="_blank">
                         <i class="fa fa-google">
                         </i>
                         Gmail邮箱
@@ -87,18 +114,13 @@
                     当然，如果你有新浪微博或者腾讯微博的话，也可以在上面给我留言。
                 </p>
                 <p>
-                    <a class="btn btn-sm btn-primary" href="javascript:if(confirm('http://weibo.ybsat.com/  \n\n'))window.location='http://www.ybsat.com/'"
+                    <a class="btn btn-sm btn-primary" href="javascript:if(confirm('http://weibo.com/Thirlyxiong/  \n\n'))window.location='http://weibo.com/Thirlyxiong/'"
                        target="_blank">
                         <i class="fa fa-weibo">
                         </i>
                         新浪微博
                     </a>
-                    <a class="btn btn-sm btn-primary" href="javascript:if(confirm('http://www.ybsat.com/  \n\n'))window.location='http://www.ybsat.com/'"
-                       target="_blank">
-                        <i class="fa fa-tencent-weibo">
-                        </i>
-                        腾讯微博
-                    </a>
+                    
                 </p>
                 <p>
                     或者，直接在本页留言也可以，不过不确定什么时候会看到
@@ -180,7 +202,7 @@
     <div class="row">
         <div class="col-md-12 post-container">
             <div class="post-content">
-                <form method="post" action="black/lib/contact.php" id="form1" class="contact-form">
+                <div  id="form1" class="contact-form">
                     <div>
           <span>
             <label>
@@ -188,7 +210,7 @@
             </label>
           </span>
           <span>
-            <input name="contact_name" type="text" class="textbox">
+            <input id="name" type="text" class="textbox">
           </span>
                     </div>
                     <div>
@@ -198,7 +220,7 @@
             </label>
           </span>
           <span>
-            <input name="contact_title" type="text" class="textbox">
+            <input id="title" type="text" class="textbox">
           </span>
                     </div>
                     <div>
@@ -208,7 +230,7 @@
             </label>
           </span>
           <span>
-            <input name="contact_email" type="email" class="textbox">
+            <input id="email" type="email" class="textbox">
           </span>
                     </div>
                     <div>
@@ -218,16 +240,16 @@
             </label>
           </span>
           <span>
-            <textarea name="contact_con" class="textbox">
+            <textarea id="contact" class="textbox">
             </textarea>
           </span>
                     </div>
                     <div>
           <span>
-            <input type="submit" value="提交" name="tijiao">
+            <input type="submit" value="提交" onclick="BtnClick()">
           </span>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="meta-box">
             </div>
