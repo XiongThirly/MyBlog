@@ -33,8 +33,7 @@
 	<bean id="logService" class="com.myblog.log.SysLogAspect"></bean>
 	<bean id="pageService" class="com.myblog.page.pageAspect"></bean>
 
-	<aop:aspectj-autoproxy/>
- 
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<!-- 启动对@AspectJ注解的支持 -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
